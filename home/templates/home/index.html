@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Examination Prep Period</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+        <div class="row center">
+          {% if user.is_authenticated %}
+            <!-- Modal Trigger -->
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+          <!-- Modal Structure -->
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Modal Header</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+          </div>
+          {% else %}
+          <a href="{% url 'login' %}" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started With Registration</a>
+          {% endif %}
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Donboscocambodia0001.JPG/640px-Donboscocambodia0001.JPG" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">I firmly believe that education should be about much more than exam grades. But schools aren’t going to get rid of exams any time soon, so students might as well learn to deal with exams as calmly and effectively as possible.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">An  examination  is  an  important  task  in  the education  system  to  measure  the  level  of  students’ understanding  of  teaching  material.  Replacing  paper-based with  an  online system  not only  increases the  efficiency  of its process  by  reducing  the consumption  of  papers,  but  also  the amount  of  time  spent  marking  and  grading.  However,  a massive  changing  in  exam  operation  happens  on  test participant.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">When you’re hard at work earning your degree in higher education, it pays to know how to study for exams as they are an inevitable part of your academic experience. While everyone has different preferences and practices, there are ways to maximize your study time and efficiency to retain information and perform well on test day.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Understanding adolescents' moral stance on examination malpractice through the lenses of parenting styles, test anxiety, and their academic self-efficacy</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEiMCF8n7dCkwfK2LbmyVEXXFCpR0LQ3kDSdDdhoX-gN-V6T_9k08IBhvq0MvNZRfFHJC6dxKEvvOY_NlUGZHw_hfXK5zhykNGBCqSlkTRkE7DPC6oyl7m02u0amPyiLM4EzinXfQJt1bR9FK-HBTQUdaDpln0SAsCrbHWMDWs7buFQiYIDQnizyjH4SIA" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.message }}
+            <input type="submit" class='btn-large btn' value='Submit'/>
+          </form>
+          <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {% comment %} <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'images/background3.jpg' %}" alt="Unsplashed background img 3"></div>
+  </div> {% endcomment %}
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Developer Bio</h5>
+          <p class="grey-text text-lighten-4"> I am students of FUTA working on this project like it's our per time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://wa.me/+2347068546357?text=I'm%20___%20and%20just%20got%20your%20contact%20from%20the%20prep%site."><img alt="Chat on WhatsApp" style="width: 40px;" src="https://img.icons8.com/color/512/whatsapp--v1.png" /></a></li>
+
+            <li><a class="white-text" href="http://m.me/nurudeen.adebileje.1?ref=Hello%20sir%"><img alt="Chat on WhatsApp" style="width: 40px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/2048px-Facebook_f_logo_%282021%29.svg.png" /></a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="https://www.linkedin.com/pub/dir/+/Adebileje">Explorer</a>
+      </div>
+    </div>
+  </footer>
+
+  {% block js %}
+  
+  {% endblock  %}
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>
